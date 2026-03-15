@@ -1,0 +1,10 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--ring-unit) / 2);
+  align-items: center;
+}
+
+.selected {
+  background-color: var(--ring-selected-background-color);
+}

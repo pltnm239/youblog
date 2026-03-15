@@ -1,0 +1,46 @@
+.editor {
+  border: 1px solid var(--ring-borders-color);
+  border-radius: var(--ring-border-radius);
+  overflow: hidden;
+}
+
+.tabs {
+  display: flex;
+  gap: calc(var(--ring-unit));
+  padding: calc(var(--ring-unit)) calc(var(--ring-unit) * 1.5);
+  border-bottom: 1px solid var(--ring-line-color);
+  background: var(--ring-sidebar-background-color);
+}
+
+.textarea {
+  width: 100%;
+  min-height: 400px;
+  padding: calc(var(--ring-unit) * 2);
+  border: none;
+  font-family: var(--ring-font-family-monospace);
+  font-size: var(--ring-font-size);
+  line-height: 1.6;
+  color: var(--ring-text-color);
+  background: var(--ring-content-background-color);
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.textarea::placeholder {
+  color: var(--ring-disabled-color);
+}
+
+.preview {
+  min-height: 400px;
+  padding: calc(var(--ring-unit) * 2);
+  background: var(--ring-content-background-color);
+}
+
+.emptyPreview {
+  color: var(--ring-disabled-color);
+  font-style: italic;
+}

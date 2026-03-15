@@ -1,0 +1,27 @@
+.heading {
+  margin: 0 0 calc(var(--ring-unit) * 3);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ring-text-color);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--ring-unit) * 2);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleInput {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  gap: calc(var(--ring-unit));
+  margin-top: calc(var(--ring-unit));
+}

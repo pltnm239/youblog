@@ -1,0 +1,25 @@
+{
+  "name": "blog",
+  "title": "Blog",
+  "description": "A corporate blog platform for YouTrack: write, read, and discuss articles in one place.",
+  "$schema": "https://json.schemastore.org/youtrack-app.json",
+  "vendor": {
+    "name": "Mikhail Cherviakov",
+    "url": "https://github.com/pltnm239"
+  },
+  "icon": "icon.svg",
+  "settingsSchemaPath": "settings.json",
+  "httpHandler": {
+    "indexPath": "backend.js"
+  },
+  "widgets": [
+    {
+      "key": "blog",
+      "name": "Blog",
+      "indexPath": "blog/index.html",
+      "extensionPoint": "MAIN_MENU_ITEM",
+      "iconPath": "blog/widget-icon.svg",
+      "description": "Corporate blog powered by YouTrack Articles"
+    }
+  ]
+}

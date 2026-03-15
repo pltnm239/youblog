@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: calc(var(--ring-unit) * 3);
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ring-text-color);
+}
+
+.authorFilter {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--ring-unit));
+  margin-bottom: calc(var(--ring-unit) * 2);
+  font-size: var(--ring-font-size);
+  color: var(--ring-secondary-color);
+}
+
+.search {
+  margin-bottom: calc(var(--ring-unit) * 3);
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--ring-unit) * 2);
+}
+
+.empty {
+  text-align: center;
+  padding: calc(var(--ring-unit) * 6) 0;
+  color: var(--ring-secondary-color);
+  font-size: var(--ring-font-size);
+}
+
+.pager {
+  margin-top: calc(var(--ring-unit) * 3);
+  display: flex;
+  justify-content: center;
+}
