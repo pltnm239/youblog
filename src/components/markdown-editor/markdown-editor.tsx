@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useMemo, useState} from 'react';
 import Button from '@jetbrains/ring-ui-built/components/button/button';
 
 import {PostContent} from '../post-content/post-content';
+import {renderPostContent} from '../post-content/render-post-content';
 
 import styles from './markdown-editor.module.css';
 
@@ -19,6 +20,7 @@ export const MarkdownEditor: React.FunctionComponent<MarkdownEditorProps> = ({
   placeholder = 'Write your post content in Markdown...',
 }) => {
   const [activeTab, setActiveTab] = useState<EditorTab>('write');
+  const renderedContent = useMemo(() => renderPostContent(value), [value]);
 
   return (
     <div className={styles.editor}>
@@ -49,7 +51,7 @@ export const MarkdownEditor: React.FunctionComponent<MarkdownEditorProps> = ({
       ) : (
         <div className={styles.preview}>
           {value.trim() ? (
-            <PostContent content={value} />
+            <PostContent renderedContent={renderedContent} />
           ) : (
             <div className={styles.emptyPreview}>Nothing to preview</div>
           )}

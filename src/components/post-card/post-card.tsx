@@ -16,10 +16,7 @@ interface PostCardProps {
 export const PostCard: React.FunctionComponent<PostCardProps> = ({post, onClick, onAuthorClick}) => (
   <article className={styles.card} onClick={onClick} role="button" tabIndex={0}>
     <div className={styles.content}>
-      <div className={styles.titleRow}>
-        <h2 className={styles.title}>{post.summary}</h2>
-        {post.hasStar && <span className={styles.starIndicator}>{'\u2605'}</span>}
-      </div>
+      <h2 className={styles.title}>{post.summary}</h2>
       <div className={styles.meta}>
         {post.author.avatarUrl && (
           <img src={post.author.avatarUrl} alt="" className={styles.avatar} />

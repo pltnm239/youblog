@@ -10,7 +10,6 @@ interface UsePostResult {
   loading: boolean;
   commentsLoading: boolean;
   addComment: (text: string) => Promise<void>;
-  toggleStar: () => Promise<void>;
 }
 
 export function usePost(postId: string): UsePostResult {
@@ -42,13 +41,5 @@ export function usePost(postId: string): UsePostResult {
     setComments(prev => [...prev, newComment]);
   }, [host, postId]);
 
-  const toggleStar = useCallback(async () => {
-    if (!post) return;
-    const repo = new YtArticlesRepository(host);
-    const newValue = !post.hasStar;
-    await repo.toggleStar(postId, newValue);
-    setPost(prev => prev ? {...prev, hasStar: newValue} : null);
-  }, [host, postId, post]);
-
-  return {post, comments, loading, commentsLoading, addComment, toggleStar};
+  return {post, comments, loading, commentsLoading, addComment};
 }

@@ -2,8 +2,9 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2px;
-  margin-bottom: calc(var(--ring-unit) * 2);
+  gap: calc(var(--ring-unit) * 0.25);
+  margin-bottom: calc(var(--ring-unit) * 3);
+  font-family: var(--ring-font-family);
   font-size: var(--ring-font-size);
   line-height: var(--ring-line-height);
 }
@@ -14,8 +15,9 @@
 }
 
 .separator {
-  margin: 0 calc(var(--ring-unit));
+  margin: 0 calc(var(--ring-unit) * 0.75);
   color: var(--ring-secondary-color);
+  opacity: 0.5;
 }
 
 .link {
@@ -23,14 +25,15 @@
   border: none;
   padding: 0;
   cursor: pointer;
-  color: var(--ring-link-color);
+  font-family: inherit;
+  color: var(--ring-secondary-color);
   font-size: inherit;
   line-height: inherit;
+  transition: color 0.12s ease;
 }
 
 .link:hover {
-  color: var(--ring-link-hover-color);
-  text-decoration: underline;
+  color: var(--ring-text-color);
 }
 
 .current {

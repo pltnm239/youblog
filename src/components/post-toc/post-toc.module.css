@@ -1,0 +1,49 @@
+.sidebar {
+  position: sticky;
+  top: calc(var(--ring-unit) * 4);
+  align-self: start;
+}
+
+.card {
+  padding-left: calc(var(--ring-unit) * 3);
+  border-left: 1px solid var(--ring-line-color);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--ring-unit) * 0.75);
+}
+
+.link,
+.linkActive {
+  display: block;
+  line-height: 1.4;
+  color: var(--ring-secondary-color);
+  transition: color 0.12s ease;
+}
+
+.link:hover,
+.linkActive {
+  color: var(--ring-text-color);
+}
+
+.linkLevel1,
+.linkLevel2,
+.linkLevel3 {
+  padding-left: 0;
+}
+
+.linkLevel2 {
+  padding-left: calc(var(--ring-unit) * 1.5);
+}
+
+.linkLevel3 {
+  padding-left: calc(var(--ring-unit) * 3);
+}
+
+@media (max-width: 1100px) {
+  .sidebar {
+    display: none;
+  }
+}

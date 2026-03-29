@@ -1,58 +1,64 @@
 .section {
-  margin-top: calc(var(--ring-unit) * 4);
+  margin-top: calc(var(--ring-unit) * 5);
   padding-top: calc(var(--ring-unit) * 3);
+  border-top: 1px solid var(--ring-line-color);
 }
 
 .heading {
-  font-size: 15px;
+  font-size: var(--ring-font-size);
   font-weight: 600;
   margin: 0 0 calc(var(--ring-unit) * 2);
-  color: var(--ring-text-color);
+  color: var(--ring-secondary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .loading,
 .empty {
   color: var(--ring-secondary-color);
-  font-size: var(--ring-font-size-smaller);
+  font-size: var(--ring-font-size);
   padding: calc(var(--ring-unit) * 2) 0;
 }
 
 .comment {
-  padding: calc(var(--ring-unit) * 2) 0;
+  padding: calc(var(--ring-unit) * 1.5) 0;
+}
+
+.comment + .comment {
+  border-top: 1px solid var(--ring-line-color);
 }
 
 .commentHeader {
   display: flex;
   align-items: center;
   gap: calc(var(--ring-unit));
-  margin-bottom: calc(var(--ring-unit));
+  margin-bottom: calc(var(--ring-unit) * 0.5);
 }
 
 .commentAvatar {
-  width: 28px;
-  height: 28px;
+  width: calc(var(--ring-unit) * 3);
+  height: calc(var(--ring-unit) * 3);
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
 }
 
 .commentAuthor {
-  font-weight: 500;
+  font-weight: 600;
   font-size: var(--ring-font-size);
   color: var(--ring-text-color);
 }
 
 .commentDate {
-  font-size: var(--ring-font-size-smaller);
+  font-size: var(--ring-font-size);
   color: var(--ring-secondary-color);
 }
 
 .commentText {
   font-size: var(--ring-font-size);
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--ring-text-color);
-  white-space: pre-wrap;
-  padding-left: calc(28px + var(--ring-unit));
+  padding-left: calc(var(--ring-unit) * 4);
 }
 
 .form {
@@ -61,10 +67,10 @@
 
 .textarea {
   width: 100%;
-  min-height: 80px;
-  padding: calc(var(--ring-unit) * 1.5);
-  border: 1px solid var(--ring-borders-color);
-  border-radius: var(--ring-border-radius);
+  min-height: calc(var(--ring-unit) * 9);
+  padding: calc(var(--ring-unit) * 1.5) calc(var(--ring-unit) * 2);
+  border: 1px solid var(--ring-line-color);
+  border-radius: calc(var(--ring-unit));
   font-family: var(--ring-font-family);
   font-size: var(--ring-font-size);
   line-height: 1.5;
@@ -72,12 +78,13 @@
   background: var(--ring-content-background-color);
   resize: vertical;
   box-sizing: border-box;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .textarea:focus {
   outline: none;
   border-color: var(--ring-main-color);
-  box-shadow: 0 0 0 1px var(--ring-main-color);
+  box-shadow: 0 0 0 calc(var(--ring-unit) * 0.375) rgba(var(--ring-main-color-rgb, 53, 122, 232), 0.15);
 }
 
 .textarea::placeholder {
