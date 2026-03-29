@@ -1,41 +1,36 @@
 .breadcrumbs {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: calc(var(--ring-unit) * 0.25);
+  overflow: hidden;
+  white-space: nowrap;
+  min-width: 0;
   margin-bottom: calc(var(--ring-unit) * 3);
   font-family: var(--ring-font-family);
   font-size: var(--ring-font-size);
   line-height: var(--ring-line-height);
 }
 
-.item {
-  display: inline-flex;
-  align-items: center;
-}
-
 .separator {
-  margin: 0 calc(var(--ring-unit) * 0.75);
-  color: var(--ring-secondary-color);
-  opacity: 0.5;
+  color: var(--ring-borders-color);
 }
 
-.link {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  font-family: inherit;
-  color: var(--ring-secondary-color);
-  font-size: inherit;
-  line-height: inherit;
-  transition: color 0.12s ease;
+.link.link {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  --ring-link-color: var(--ring-secondary-color);
+  text-decoration: none;
 }
 
-.link:hover {
-  color: var(--ring-text-color);
+.link.link:hover {
+  text-decoration: none;
 }
 
 .current {
-  color: var(--ring-secondary-color);
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: inherit;
 }

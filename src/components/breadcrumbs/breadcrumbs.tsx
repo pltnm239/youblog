@@ -1,4 +1,6 @@
 import React from 'react';
+import RingBreadcrumbs from '@jetbrains/ring-ui-built/components/breadcrumbs/breadcrumbs';
+import Link from '@jetbrains/ring-ui-built/components/link/link';
 
 import styles from './breadcrumbs.module.css';
 
@@ -12,18 +14,28 @@ interface BreadcrumbsProps {
 }
 
 export const Breadcrumbs: React.FunctionComponent<BreadcrumbsProps> = ({items}) => (
-  <nav className={styles.breadcrumbs}>
-    {items.map((item, index) => (
-      <span key={index} className={styles.item}>
-        {index > 0 && <span className={styles.separator}>/</span>}
-        {item.onClick ? (
-          <button type="button" className={styles.link} onClick={item.onClick}>
+  <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
+    <RingBreadcrumbs separatorClassName={styles.separator}>
+      {items.map((item, index) => {
+        if (item.onClick) {
+          return (
+            <Link
+              key={`${item.label}-${index}`}
+              pseudo
+              className={styles.link}
+              onClick={item.onClick}
+            >
+              {item.label}
+            </Link>
+          );
+        }
+
+        return (
+          <span key={`${item.label}-${index}`} className={styles.current} aria-current="page">
             {item.label}
-          </button>
-        ) : (
-          <span className={styles.current}>{item.label}</span>
-        )}
-      </span>
-    ))}
+          </span>
+        );
+      })}
+    </RingBreadcrumbs>
   </nav>
 );
